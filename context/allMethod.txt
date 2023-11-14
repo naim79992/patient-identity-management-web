@@ -1,0 +1,30 @@
+in my project i have 5 dashboard 
+
+###patient have functionality such as GetPersonalDetails,PatientPersonalDoctors,PersonalHealthData,Prescription ,SetPatientPersonalDetails,SetPersonalHealthData,ShareDataByPatient
+###doctor have functionality such as DisplayPrescription DoctorPersonalPatientList GetDoctorPersonalData , SentPrescription,  SetDoctorPersonalData SharedDataFromPathologist, 
+
+#####Pathologist have functionality such as
+1. AddNewpathologist
+2.SentTestReportToDoctor 
+3. ViewPatientPrescriptionSentByDoctor   
+4.GetPathologistPersonalData   
+
+
+####MedicalResearchLab have functionality such as
+1.AddResearchLabReport 
+2.AddMedicalResearchLab
+3.GetMediResearchLabPersonalData
+4.ViewPrescriptionOrLabReport
+5.PatientToMedicalResearchLabSharedData
+
+#####PharmacyCompany have functionality such as
+
+1.AddNewPharmacyCompany
+2.AddingTopMedichine 
+3.GetPharmacyCompanyPersonalData 
+4.ViewTopMedicine 
+5.PatientToPharmacyCompanySharedData 
+
+
+
+
