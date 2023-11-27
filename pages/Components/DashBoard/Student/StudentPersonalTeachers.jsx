@@ -7,9 +7,10 @@ const StudentPersonalDoctors = () => {
     studentPersonalTeacherList.map((el, i) => (
       <div className="w-3/5 ml-40 m-7">
         <div class="card">
+          
           <div class="card-body text-center" key={i}>{el}
 
-          </div>
+      </div>
         </div>
 
       </div>
