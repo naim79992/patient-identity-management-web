@@ -1,4 +1,4 @@
-import { healthABI, healthAddess, patientABI, patientAddress } from '@/context/constants';
+import { studentABI, studentAddress } from '@/context/constants';
 import { ethers } from 'ethers';
 export const connectAccount = ''
 export const connectWallet = async () => {
@@ -23,9 +23,9 @@ export const connectWallet = async () => {
 export const connectWalletBycontractData = async (providerOrSigner) => {
 
 
-  const contractHealth = new ethers.Contract(healthAddess, healthABI, providerOrSigner)
-  const contractPatient = new ethers.Contract(patientAddress, patientABI, providerOrSigner)
-  return [contractHealth, contractPatient]
+ 
+  const contractEducation = new ethers.Contract(studentAddress, studentABI, providerOrSigner)
+  return contractEducation
 
 
 }

@@ -3,7 +3,7 @@ import SignUpComponent from "../Components/DashBoard/SignUp";
 
 const SignUp = () => {
   return (
-    <div className="container">
+    <div >
       <SignUpComponent />
     </div>
   );

@@ -1,15 +1,19 @@
-import React, { useContext, useState } from "react";
-import Styles from "./DisplayFile.module.css";
-import { EducationContext } from "@/context/Education";
+import React, { useContext, useEffect, useState } from "react";
+import Styles from "../../File/DisplayFile.module.css";
+import {  EducationContext } from "@/context/Education";
 
-const DisplayFile = ({ userData }) => {
-  const { patientData } = useContext(EducationContext);
+const DisplayAssignment = () => {
+  const {
+    sharedData,
+    getStudentAllAssignment,
+    studentToTeacherSharedData,
+  } = useContext(EducationContext);
   const [data, setData] = useState("");
   const getData = async () => {
     let dataArray;
 
     try {
-      dataArray = await userData[8];
+      dataArray = await sharedData;
       console.log("data image", dataArray);
     } catch (error) {
       alert(error);
@@ -28,10 +32,9 @@ const DisplayFile = ({ userData }) => {
             target="_blank"
           >
             <img className="h-60 w-60 my-10 rounded-0"
-              src={`https://turquoise-calm-ant-218.mypinata.cloud/ipfs${item.substring(6)}?pinataGatewayToken=58xMykhdv5Kt3vFsSwUoiKaamt03r1kGnZp9dc3nuU62URBpVBJGq0kFWIxDo4vb&_gl=1*1vorjfi*_ga*MTc4MDI5NDc4My4xNzAwMDczMjUz*_ga_5RMPXG14TE*MTcwMDA3MzI1My4xLjEuMTcwMDA3NTk4Ni42MC4wLjA.
-`}
-              alt="img" />
-
+              src={`https://turquoise-calm-ant-218.mypinata.cloud/ipfs${item.substring(6)}?pinataGatewayToken=58xMykhdv5Kt3vFsSwUoiKaamt03r1kGnZp9dc3nuU62URBpVBJGq0kFWIxDo4vb&_gl=1*1vorjfi*_ga*MTc4MDI5NDc4My4xNzAwMDczMjUz*_ga_5RMPXG14TE*MTcwMDA3MzI1My4xLjEuMTcwMDA3NTk4Ni42MC4wLjA.`}
+              alt="img"
+            />
           </a>
         );
       });
@@ -42,19 +45,28 @@ const DisplayFile = ({ userData }) => {
     }
   };
 
+  useEffect(() => {
+    {
+      studentToTeacherSharedData.map((el) => {
+        getStudentAllAssignment(el);
+      });
+    }
+  }, [studentToTeacherSharedData]);
+
   return (
-    <div className="container pt-4 ">
+    <div className="container ">
       <div className='d-flex justify-around flex-wrap'>{data}</div>
-      {console.log("data", data)}
       <button
-        className="btn btn-success block  m-auto "
+        className="btn btn-success block my-4 "
         style={{ backgroundColor: "green" }}
         onClick={getData}
       >
-        Show Documents
+        Show Assignment
       </button>
+
+      {console.log(studentToTeacherSharedData)}
     </div>
   );
 };
 
-export default DisplayFile;
+export default DisplayAssignment;

@@ -3,12 +3,12 @@ const { ethers } = require("hardhat")
 async function main() {
     const [deployer] = await ethers.getSigners()
 
-    const MedicalData = await ethers.getContractFactory("MedicalData")
+    const EducationalData = await ethers.getContractFactory("EducationalData")
 
 
-    const medicalData = await MedicalData.deploy()
+    const educationalData = await EducationalData.deploy()
 
-    console.log("MedicalData.address :", medicalData.address);
+    console.log("EducationalData.address :", educationalData.address);
 
 }
 
@@ -18,7 +18,7 @@ main().then(() => {
     console.error(err)
     process.exit(1)
 })
-// 0x14920e143bcf186CdE947100976AeFc73c684B05
+// 0xeA3363cc887aa09B0A754ec3C7356aC3D5b0427f
 
 //  *******for FUNTOKENSALE contract *******
 

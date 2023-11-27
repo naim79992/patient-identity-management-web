@@ -2,43 +2,13 @@ import { useContext, useState } from "react";
 import axios from "axios";
 // import './FileUpload.css';
 import Styles from "./FileUpload.module.css";
-import { HealthContext } from "@/context/Health";
+import { EducationContext } from "@/context/Education";
 
 const FileUpload = ({ userAddress }) => {
   const {
     account,
-    AddNewPatient,
-    transferDataByPatient,
-    AddMedicalResearchLab,
-    AddNewpathologist,
-    AddNewPharmacyCompany,
-    AddDoctor,
-    getPharmacyCompanyAllData,
-    getPathologistAllData,
-    getMedicalResearchLabAData,
-    getDoctorAllData,
-    getPatientAllData,
-    fetchData,
-    TopMedichine,
-    doctorData,
-    patientData,
-    PharmacyCompany,
-    MedicalResearchLab,
-    contractData,
-    PathologistData,
     signer,
-    ConnectedAccountUser,
-    MedicalResearchLabReport,
-    MedicalResearchLabReports,
-    ConnectedEntityType,
-    addTopMedichine,
-    addLabReport,
-    setPatientPersonalData,
-    transferDataByDoctor,
-    transferDataByPathologist,
-    setPathologistTest,
-    ViewTopMedichine,
-  } = useContext(HealthContext);
+  } = useContext(EducationContext);
   const [file, setFile] = useState(null);
   const [filename, setFilename] = useState("No image selected");
 
@@ -55,8 +25,10 @@ const FileUpload = ({ userAddress }) => {
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key: `cd464d35243d0c6d000d`,
-            pinata_secret_api_key: `4c3d3e4211b69326b43d6def2550caafd0a7d9a5e73cff6a3fa8fde001396384`,
+            pinata_api_key: `
+            5c1e110312968c506f0b`,
+            pinata_secret_api_key: `
+            cca432217da7e9c74550a8c182b9c1a6805f57811500d9cf4aad16ff6191c187`,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -84,11 +56,11 @@ const FileUpload = ({ userAddress }) => {
   };
   return (
     <div className="container pt-2">
-      <div className="card card-body">
+      <div className="card p-4 bg-green-100">
         <form className={Styles.form} onSubmit={handleSubmit}>
-          <div className="form-group ">
-            <label htmlFor="file-upload" className="form-lebel">
-              Choose Image
+          <div className="form-group my-2">
+            <label htmlFor="file-upload" className="form-lebel my-2">
+              <b>Choose Image</b>
             </label>
             <input
               type="file"

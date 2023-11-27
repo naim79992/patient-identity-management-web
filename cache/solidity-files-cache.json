@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "E:\\Blockchain\\blockchain-olympiad\\contracts\\patientDataManagement.sol": {
-      "lastModificationDate": 1689311310842,
-      "contentHash": "df957205d5c24e72231207307c070ff6",
-      "sourceName": "contracts/patientDataManagement.sol",
+    "C:\\Users\\USER\\Downloads\\patient-identity-management\\EdCheck\\contracts\\Education.sol": {
+      "lastModificationDate": 1701004600321,
+      "contentHash": "10e13682ca63ed4b88ad419bb0b0594d",
+      "sourceName": "contracts/Education.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -33,7 +33,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "MedicalData"
+        "EducationalData"
       ]
     }
   }

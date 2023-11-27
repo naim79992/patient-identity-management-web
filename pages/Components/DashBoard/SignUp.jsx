@@ -1,43 +1,42 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import { HealthContext } from "@/context/Health";
-import SetPatientPersonalDetails from "./Patient/SetPersonalDetails";
-import SetDoctorPersonalData from "./Doctor/SetDoctorPersonalData";
-import SetMediResearchLabPersonalData from "./MedicalResearchLab/SetMediResearchLabPersonalData";
-import SetPathologistPersonalData from "./Pathologist/SetPathologistPersonalData";
-import PharmacyCompanyPersonalData from "./PharmacyCompany/SetPharmacyCompanyPersonalData";
+import { EducationContext } from "@/context/Education";
+
+
+import SetStudentPersonalDetails from "./Student/SetPersonalDetails";
+import SetTeacherPersonalData from "./Teacher/SetTeacherPersonalData";
+import { InfinitySpin } from "react-loader-spinner";
 
 const SignUpComponent = () => {
   const router = useRouter();
-  const { loading, ConnectedAccountUser } = useContext(HealthContext);
+  const { loading, ConnectedAccountUser } = useContext(EducationContext);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+    <InfinitySpin 
+  width='200'
+  color="#4fa94d"
+/>
+  </div>;
   }
 
   useEffect(() => {
+    console.log(ConnectedAccountUser)
     if (ConnectedAccountUser != 0) {
       router.push("/dashboard");
     }
   }, [ConnectedAccountUser]);
 
   return (
-    <div className="row pt-4">
-      <div className="col-md-3 mb-2">
-        <SetPatientPersonalDetails />
+    <div className="row  vh-100 bg-orange-200 vw-100 d-flex justify-content-center align-items-center pl-16" >
+      <div className="col-md-3 mb-2 " >
+        <SetStudentPersonalDetails />
       </div>
+
       <div className="col-md-3 mb-2">
-        <SetPathologistPersonalData />
+        <SetTeacherPersonalData />
       </div>
-      <div className="col-md-3 mb-2">
-        <PharmacyCompanyPersonalData />
-      </div>
-      <div className="col-md-3 mb-2">
-        <SetDoctorPersonalData />
-      </div>
-      <div className="col-md-3 mb-2">
-        <SetMediResearchLabPersonalData />
-      </div>
+
     </div>
   );
 };

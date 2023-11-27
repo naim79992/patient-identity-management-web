@@ -1,14 +1,20 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import { HealthContext } from "@/context/Health";
-import SharedDataFromPatient from "@/pages/Components/DashBoard/Doctor/SharedDataFromPathologist";
+import { EducationContext } from "@/context/Education";
+import { InfinitySpin } from "react-loader-spinner";
+
 
 const Home = () => {
-  const router = useRouter();
-  const { loading, ConnectedAccountUser } = useContext(HealthContext);
+  const router = useRouter(); //front end e page cng krte
+  const { loading, ConnectedAccountUser } = useContext(EducationContext);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+      <InfinitySpin 
+    width='200'
+    color="#4fa94d"
+  />
+    </div>;
   }
 
   useEffect(() => {
@@ -22,7 +28,7 @@ const Home = () => {
     <div>
       {/* <MainComponent /> */}
       {/* <SetPatientPersonalDetails /> */}
-      <SharedDataFromPatient />
+    
     </div>
   );
 };

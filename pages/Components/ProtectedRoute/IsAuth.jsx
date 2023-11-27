@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import { HealthContext } from "@/context/Health";
+import { EducationContext } from "@/context/Education";
 
 function IsAuth(Component) {
   const AuthWrapper = (props) => {
-    const { loading, ConnectedAccountUser } = useContext(HealthContext);
+    const { loading, ConnectedAccountUser } = useContext(EducationContext);
     const router = useRouter();
 
     if (loading) {

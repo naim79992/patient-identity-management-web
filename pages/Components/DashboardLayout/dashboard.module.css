@@ -7,7 +7,7 @@
   overflow-x: hidden;
   transition: 0.3s;
   background: linear-gradient(180deg, #2e3091 0%, rgba(58, 163, 251, 0.5) 100%);
-  box-shadow: 1px 0px 2px rgba(191, 191, 191, 0.5);
+  box-shadow: 1px 0px 2px rgba(219, 204, 204, 0.5);
   z-index: 1030;
 }
 
@@ -19,7 +19,7 @@
   transition: 0.3s;
   margin-top: 0px;
   margin-left: 250px;
-  background-color: #eff3fd;
+  background-color: #a8f2f5;
   min-height: 100vh;
 }
 

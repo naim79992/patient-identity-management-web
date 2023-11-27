@@ -1,7 +1,7 @@
-import health from "./MedicalData.json";
-import patient from "./MedicalData.json";
 
-export const healthAddess = "0xDa8829CD5B64B1176DdbDFaF9f06c3545dCBCf83";
-export const patientAddress = healthAddess;
-export const healthABI = health.abi;
-export const patientABI = patient.abi;
+import student from "./EducationalData.json";
+
+
+export const studentAddress =  "0xf15BfE9EfBE25bF28b4B28Dbde1aDa4A5DB21dfc";
+
+export const studentABI = student.abi;
